@@ -1,175 +1,365 @@
 WEBVTT
 
 1
-00:00:07.535 --> 00:00:12.105
-Welcome to Insiders' Viewpoints: Aspects of the Web Development Lifecycle.
+00:00:07.260 --> 00:00:10.500
+Welcome to JavaScript Functions and Prototypes.
 
 2
-00:00:12.600 --> 00:00:16.500
-In this video, we will listen to several
-web development professionals discuss
+00:00:11.160 --> 00:00:14.040
+After watching this video, you will be able to
 
 3
-00:00:16.500 --> 00:00:19.320
-the aspects in the lifecycle of web development.
+00:00:14.040 --> 00:00:16.440
+describe functions in JavaScript,
 
 4
-00:00:20.071 --> 00:00:24.780
-So, what are your most and least favorite
-aspects in the lifecycle of web development
+00:00:16.440 --> 00:00:19.740
+describe prototypes in JavaScript, and
 
 5
-00:00:25.018 --> 00:00:28.918
-(from conception to development and
-testing, deployment, and maintenance)
+00:00:19.740 --> 00:00:22.380
+demonstrate how to create a custom object.
 
 6
-00:00:29.760 --> 00:00:33.420
-Hello, everyone, my name is Upkar Lidder
-and I'm a developer advocate with IBM.
+00:00:22.920 --> 00:00:28.860
+A function is a block of code which can be called
+from any point in a script after being declared.
 
 7
-00:00:34.080 --> 00:00:37.560
-So I will not call it my
-least favorite by any means.
+00:00:28.860 --> 00:00:31.500
+A function is made up of the following parts:
 
 8
-00:00:37.560 --> 00:00:42.780
-But as a developer, I'm very keen to
-start developing to start writing code.
+00:00:31.500 --> 00:00:33.180
+The keyword function.
 
 9
-00:00:43.274 --> 00:00:48.960
-There is a lot of, there's a lot of things that
-happen before you write that first piece of code.
+00:00:33.180 --> 00:00:34.740
+The name of the function.
 
 10
-00:00:48.960 --> 00:00:52.260
-And that could be design thinking workshops,
+00:00:34.740 --> 00:00:38.100
+Parentheses, with optional parameter arguments.
 
 11
-00:00:52.260 --> 00:00:53.640
-getting user requirements,
+00:00:38.100 --> 00:00:40.620
+Curly braces, with the logic.
 
 12
-00:00:53.640 --> 00:00:54.960
-sprint planning, etc.
+00:00:41.220 --> 00:00:46.440
+The last statement in a function block is
+the optional return statement that returns
 
 13
-00:00:54.960 --> 00:01:00.600
-So as a developer, I'm always eager
-to bypass those things and get into
+00:00:46.440 --> 00:00:48.960
+control back to whatever called the function.
 
 14
-00:01:00.600 --> 00:01:02.820
-the actual development of the application.
+00:00:49.980 --> 00:00:52.920
+This example is a function that is named add.
 
 15
-00:01:03.341 --> 00:01:08.040
-My favorite thing about application development
-is actually deploying the application
+00:00:52.920 --> 00:00:57.540
+This function takes two parameter
+arguments and returns the sum of
 
 16
-00:01:08.040 --> 00:01:14.700
-or an app in handing it to the end user
-and see how it makes their lives easier,
+00:00:57.540 --> 00:01:01.800
+the arguments or concatenates the
+two arguments if they are strings.
 
 17
-00:01:14.700 --> 00:01:16.500
-it makes their jobs more effective.
+00:01:02.520 --> 00:01:07.020
+Notice that you do not specify the data
+type for the arguments of the function.
 
 18
-00:01:18.480 --> 00:01:21.060
-Hello there, my name is Bradley Steinfeld.
+00:01:07.020 --> 00:01:13.440
+The data types are determined by the values of the
+arguments that are being passed to the function.
 
 19
-00:01:21.060 --> 00:01:25.860
-I am a software architect and I work
-for IBM Cloud and cognitive software.
+00:01:13.440 --> 00:01:19.980
+There is no specific return type declared –
+the function returns whatever type is required.
 
 20
-00:01:26.640 --> 00:01:31.740
-So as a software architect, I
-think my favorite part of the
+00:01:19.980 --> 00:01:25.680
+In this case, the return is a simple
+addition or concatenation of the input
 
 21
-00:01:31.740 --> 00:01:34.860
-cloud app development lifecycle
-is probably the conception part,
+00:01:25.680 --> 00:01:31.080
+parameters. The action chosen depends on
+what data is provided to the function.
 
 22
-00:01:34.860 --> 00:01:36.060
-the architecture part,
+00:01:31.080 --> 00:01:35.340
+If the values can be interpreted
+as numbers, they are added.
 
 23
-00:01:36.060 --> 00:01:39.540
-and kind of putting it together
-how we're going to build this app.
+00:01:35.340 --> 00:01:39.120
+If they can be interpreted as
+strings, they are concatenated.
 
 24
-00:01:39.540 --> 00:01:41.400
-What services are we going to use?
+00:01:39.720 --> 00:01:46.080
+This is an example of declaring a function named
+Car that accepts three arguments as parameters.
 
 25
-00:01:41.400 --> 00:01:45.180
-What different types of technologies
-we need to at the end of the day,
+00:01:46.080 --> 00:01:51.720
+A little further down, you specifically ask the
+function to run, by declaring the statement:
 
 26
-00:01:45.180 --> 00:01:49.560
-deliver what the stakeholder needs
-and do it in the best way we can.
+00:01:51.720 --> 00:01:59.580
+var c = new Car with the arguments
+“meridian”, “Sabre GT” and 2012.
 
 27
-00:01:50.220 --> 00:01:52.020
-Cheapest we can so on and so forth.
+00:01:59.580 --> 00:02:03.300
+In the Car function, the keyword "this" refers to
 
 28
-00:01:52.409 --> 00:01:54.900
-My least favorite is probably testing.
+00:02:03.300 --> 00:02:06.840
+the current instance of the Car
+object that is being created.
 
 29
-00:01:55.218 --> 00:01:58.260
-It's not the most fun to discover bugs and
+00:02:07.298 --> 00:02:12.480
+In other words, an instance of Car that
+is associated with the variable named c.
 
 30
-00:01:58.260 --> 00:02:00.960
-then fix them but at the end of
-the day, it's a necessary part.
+00:02:13.059 --> 00:02:16.380
+Using the "this" keyword can differentiate whether
 
 31
-00:02:01.163 --> 00:02:04.043
-So there you go.
+00:02:16.380 --> 00:02:20.640
+you are referring to the global
+or local instance of a variable.
 
 32
-00:02:05.940 --> 00:02:07.200
-I am Dennis Harvey.
+00:02:21.000 --> 00:02:26.340
+The use of "model" in this example refers to
+the argument that was passed into the function,
 
 33
-00:02:07.200 --> 00:02:11.760
-I work at Coursera as a content
-strategy manager for cloud technology.
+00:02:26.340 --> 00:02:30.060
+while the use of "this.model" refers to the global
 
 34
-00:02:12.420 --> 00:02:16.740
-Conception and development is always exciting--
-to see an idea morph into reality.
+00:02:30.060 --> 00:02:34.140
+"model" variable associated to
+this instance of the Car object.
 
 35
-00:02:17.400 --> 00:02:22.020
-Testing can be interesting
-for QA-oriented professionals.
+00:02:34.530 --> 00:02:41.580
+The getName function of Car returns the make,
+model, and year of the newly created Car object.
 
 36
-00:02:22.620 --> 00:02:27.180
-Deployment can also be challenging if
-you incorporate automated deployment
+00:02:42.300 --> 00:02:46.740
+Prototypes allow you to easily
+define properties and methods
 
 37
-00:02:27.180 --> 00:02:29.880
-which would be a best practice at this point.
+00:02:46.740 --> 00:02:49.440
+for all instances of a particular object.
 
 38
-00:02:30.480 --> 00:02:38.580
-And maintenance is possibly nobody's favorite,
-but it is critical and often under-emphasized.
+00:02:49.440 --> 00:02:53.880
+All JavaScript objects which can
+be created with the "new" keyword
+
+39
+00:02:53.880 --> 00:02:57.480
+inherit properties and methods from a "prototype".
+
+40
+00:02:57.480 --> 00:03:03.060
+For example, the "Car" object we created
+previously inherits the make, model,
+
+41
+00:03:03.060 --> 00:03:09.600
+and year properties from the constructor function,
+which are implicitly defined in the Car prototype.
+
+42
+00:03:09.600 --> 00:03:14.700
+When a car object is created, that
+object inherits all the properties
+
+43
+00:03:14.700 --> 00:03:17.940
+and methods that are defined by this prototype.
+
+44
+00:03:17.940 --> 00:03:23.880
+Unlike objects, the methods and properties
+of prototypes can be changed with one call.
+
+45
+00:03:24.200 --> 00:03:29.400
+If you want to add a new property to an
+object's constructor function, for example,
+
+46
+00:03:29.400 --> 00:03:34.620
+you must add it to the function directly
+by adding it as an additional argument.
+
+47
+00:03:34.620 --> 00:03:38.700
+It cannot be done simply by
+calling the object itself.
+
+48
+00:03:38.700 --> 00:03:44.940
+With a prototype, however, it is possible to
+add a property or method with just one call.
+
+49
+00:03:45.480 --> 00:03:48.180
+Since all objects have a prototype property,
+
+50
+00:03:48.180 --> 00:03:52.920
+this is an easier way to add
+properties and functions to objects.
+
+51
+00:03:53.460 --> 00:03:59.160
+Any object that gets instantiated inherits
+the current state of the prototype.
+
+52
+00:03:59.160 --> 00:04:02.880
+If a prototype changes, all objects using it will
+
+53
+00:04:02.880 --> 00:04:08.280
+automatically inherit the new properties
+and functions within that prototype.
+
+54
+00:04:08.280 --> 00:04:11.640
+One way to change a prototype is via a script,
+
+55
+00:04:11.640 --> 00:04:15.300
+which can override prototype
+properties and functions.
+
+56
+00:04:15.840 --> 00:04:20.280
+Here is another example that uses a
+prototype to change Car instances.
+
+57
+00:04:20.280 --> 00:04:26.460
+This time, you add a method function
+called getName to the Car prototype.
+
+58
+00:04:26.460 --> 00:04:29.520
+Now when a Car object is instantiated,
+
+59
+00:04:29.520 --> 00:04:35.040
+it also includes the getName function
+that returns the make, model, and year.
+
+60
+00:04:35.640 --> 00:04:41.400
+All existing instances of the Car
+object also inherit the getName method.
+
+61
+00:04:41.400 --> 00:04:47.760
+Functions are usually declared first, and
+not run until you specifically ask them to,
+
+62
+00:04:47.760 --> 00:04:50.280
+as you saw in some of the previous examples.
+
+63
+00:04:50.280 --> 00:04:58.140
+Auto-invocation or self-executing functions
+start running immediately after being declared.
+
+64
+00:04:58.140 --> 00:05:02.820
+The functions and variables inside
+self-executing functions are only
+
+65
+00:05:02.820 --> 00:05:06.240
+available to the code inside
+the self-executing function.
+
+66
+00:05:06.960 --> 00:05:11.400
+Auto-invocation functions can
+also be unnamed or anonymous
+
+67
+00:05:11.400 --> 00:05:15.540
+functions and have the format that is
+shown in the code block on the slide.
+
+68
+00:05:16.200 --> 00:05:20.460
+Self-executing functions are
+often used to initialize data
+
+69
+00:05:20.460 --> 00:05:23.460
+or to declare DOM elements on the page.
+
+70
+00:05:23.460 --> 00:05:25.620
+In this video, you learned:
+
+71
+00:05:25.620 --> 00:05:31.800
+A function is a block of code which can be called
+from any point in a script after being declared.
+
+72
+00:05:31.800 --> 00:05:36.600
+Functions can take arguments passed
+as parameters and can return results.
+
+73
+00:05:37.380 --> 00:05:41.460
+By using prototypes, you can
+easily define properties and
+
+74
+00:05:41.460 --> 00:05:44.640
+methods for all instances of a specific object.
+
+75
+00:05:45.300 --> 00:05:51.000
+Prototypes exist for all JavaScript objects
+that can be created with the new keyword.
+
+76
+00:05:51.780 --> 00:05:57.300
+To add a new function to the template for the
+object, modify the prototype for the object.
+
+77
+00:05:58.200 --> 00:06:05.040
+Self-executing (auto-invocation) functions start
+running immediately after they have been declared.
+
+78
+00:06:05.040 --> 00:06:09.480
+The functions and variables are
+isolated from the rest of the script.

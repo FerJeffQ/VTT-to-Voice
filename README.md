@@ -28,9 +28,15 @@ pip install gtts webvtt pydub googletrans==4.0.0-rc1 tqdm
 ```
 
 ## USO
-### Ejecución básica
+### Ejecución básica (Texto Español VTT a Audio español)
 ```bash
-python voice_translator.py
+python vtt_audio_es.py
+
+```
+
+### Ejecución CON TRADUCCIÓN (Texto Ingles VTT a Audio español)
+```bash
+python vtt_audio_translate.py
 
 ```
 

@@ -4,6 +4,7 @@ from pydub import AudioSegment
 from googletrans import Translator
 import io
 from tqdm import tqdm
+from httpcore._exceptions import ReadTimeout
 
 class VoiceTranslator:
     def __init__(self, vtt_file_path, output_path):
@@ -13,18 +14,25 @@ class VoiceTranslator:
         self.output_path = output_path
         self.final_audio = AudioSegment.silent(duration=0)
 
-    def translate_and_speak(self, text, lang='es'):
+    def translate_and_speak(self, text, lang='es', max_retries=3):
         # Traduce el texto a otro idioma y lo convierte en un segmento de audio usando Google Text-to-Speech (gTTS).
-        translation = self.translator.translate(text, dest=lang)
-        tts = gTTS(text=translation.text, lang=lang)
+        for _ in range(max_retries):
+            try:
+                translation = self.translator.translate(text, dest=lang)
+                tts = gTTS(text=translation.text, lang=lang)
+
+                # Guarda el audio en un objeto BytesIO para poder ser utilizado por Pydub.
+                fp = io.BytesIO()
+                tts.write_to_fp(fp)
+                fp.seek(0)
+
+                # Retorna el audio como un segmento de AudioSegment.
+                return AudioSegment.from_file(fp, format="mp3")
+            except ReadTimeout:
+                print("Timeout error, retrying...")
         
-        # Guarda el audio en un objeto BytesIO para poder ser utilizado por Pydub.
-        fp = io.BytesIO()
-        tts.write_to_fp(fp)
-        fp.seek(0)
-        
-        # Retorna el audio como un segmento de AudioSegment.
-        return AudioSegment.from_file(fp, format="mp3")
+        # Si todos los reintentos fallan, levanta una excepción.
+        raise Exception("Unable to translate text after multiple retries.")
 
     def adjust_audio_speed(self, audio, speed=1.35):
         # Ajusta la velocidad de reproducción del audio.
@@ -36,7 +44,8 @@ class VoiceTranslator:
 
     def process_subtitles(self):
         # Procesa cada subtítulo en el archivo VTT.
-        for caption in tqdm(self.vtt, desc="Procesando subtítulos", unit="subtítulo"):        
+        for caption in tqdm(self.vtt, desc="Procesando subtítulos", unit="subtítulo"): 
+                    
             # Traduce y convierte el texto del subtítulo en un segmento de audio.
             audio = self.translate_and_speak(caption.text)
             

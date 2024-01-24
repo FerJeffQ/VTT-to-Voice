@@ -1,0 +1,235 @@
+WEBVTT
+
+00:00:07.260 --> 00:00:10.500
+Bienvenido a funciones y prototipos de JavaScript.
+
+00:00:11.160 --> 00:00:14.040
+Después de ver este vídeo, podrás
+
+00:00:14.040 --> 00:00:16.440
+describir funciones en JavaScript,
+
+00:00:16.440 --> 00:00:19.740
+describir prototipos en JavaScript, y
+
+00:00:19.740 --> 00:00:22.380
+Demuestre cómo crear un objeto personalizado.
+
+00:00:22.920 --> 00:00:28.860
+Una función es un bloque de código que se puede llamar desde cualquier punto de un script después de haber sido declarado.
+
+00:00:28.860 --> 00:00:31.500
+Una función se compone de las siguientes partes:
+
+00:00:31.500 --> 00:00:33.180
+La función de palabra clave.
+
+00:00:33.180 --> 00:00:34.740
+El nombre de la función.
+
+00:00:34.740 --> 00:00:38.100
+Paréntesis, con argumentos de parámetros opcionales.
+
+00:00:38.100 --> 00:00:40.620
+Llaves, con la lógica.
+
+00:00:41.220 --> 00:00:46.440
+La última declaración en un bloque de funciones es la declaración de retorno opcional que devuelve
+
+00:00:46.440 --> 00:00:48.960
+controle de nuevo a lo que sea que se llame la función.
+
+00:00:49.980 --> 00:00:52.920
+Este ejemplo es una función llamada agregar.
+
+00:00:52.920 --> 00:00:57.540
+Esta función toma dos argumentos de parámetro y devuelve la suma de
+
+00:00:57.540 --> 00:01:01.800
+los argumentos o concatena los dos argumentos si son cadenas.
+
+00:01:02.520 --> 00:01:07.020
+Observe que no especifica el tipo de datos para los argumentos de la función.
+
+00:01:07.020 --> 00:01:13.440
+Los tipos de datos están determinados por los valores de los argumentos que se pasan a la función.
+
+00:01:13.440 --> 00:01:19.980
+No se declara ningún tipo de retorno específico: la función devuelve cualquier tipo requerido.
+
+00:01:19.980 --> 00:01:25.680
+En este caso, el retorno es una simple suma o concatenación de la entrada
+
+00:01:25.680 --> 00:01:31.080
+parámetros. La acción elegida depende de los datos que se proporcionan a la función.
+
+00:01:31.080 --> 00:01:35.340
+Si los valores pueden interpretarse como números, se suman.
+
+00:01:35.340 --> 00:01:39.120
+Si pueden interpretarse como cadenas, se concatenan.
+
+00:01:39.720 --> 00:01:46.080
+Este es un ejemplo de cómo declarar una función llamada Car que acepta tres argumentos como parámetros.
+
+00:01:46.080 --> 00:01:51.720
+Un poco más abajo, solicita específicamente que se ejecute la función, declarando la declaración:
+
+00:01:51.720 --> 00:01:59.580
+var c = Auto nuevo con los argumentos “meridian”, “Sabre GT” y 2012.
+
+00:01:59.580 --> 00:02:03.300
+En la función Coche, la palabra clave "este" se refiere a
+
+00:02:03.300 --> 00:02:06.840
+la instancia actual del objeto Car que se está creando.
+
+00:02:07.298 --> 00:02:12.480
+En otras palabras, una instancia de Car asociada con la variable denominada c.
+
+00:02:13.059 --> 00:02:16.380
+El uso de la palabra clave "this" puede diferenciar si
+
+00:02:16.380 --> 00:02:20.640
+te estás refiriendo a la instancia global o local de una variable.
+
+00:02:21.000 --> 00:02:26.340
+El uso de "modelo" en este ejemplo se refiere al argumento que se pasó a la función,
+
+00:02:26.340 --> 00:02:30.060
+mientras que el uso de "este.modelo" se refiere al global
+
+00:02:30.060 --> 00:02:34.140
+Variable "modelo" asociada a esta instancia del objeto Car.
+
+00:02:34.530 --> 00:02:41.580
+La función getName de Car devuelve la marca, modelo y año del objeto Car recién creado.
+
+00:02:42.300 --> 00:02:46.740
+Los prototipos le permiten definir fácilmente propiedades y métodos.
+
+00:02:46.740 --> 00:02:49.440
+para todas las instancias de un objeto particular.
+
+00:02:49.440 --> 00:02:53.880
+Todos los objetos JavaScript que se pueden crear con la palabra clave "nueva"
+
+00:02:53.880 --> 00:02:57.480
+heredar propiedades y métodos de un "prototipo".
+
+00:02:57.480 --> 00:03:03.060
+Por ejemplo, el objeto "Coche" que creamos anteriormente hereda la marca, modelo,
+
+00:03:03.060 --> 00:03:09.600
+y propiedades de año de la función constructora, que están implícitamente definidas en el prototipo Car.
+
+00:03:09.600 --> 00:03:14.700
+Cuando se crea un objeto de automóvil, ese objeto hereda todas las propiedades
+
+00:03:14.700 --> 00:03:17.940
+y métodos que están definidos por este prototipo.
+
+00:03:17.940 --> 00:03:23.880
+A diferencia de los objetos, los métodos y propiedades de los prototipos se pueden cambiar con una sola llamada.
+
+00:03:24.200 --> 00:03:29.400
+Si desea agregar una nueva propiedad a la función constructora de un objeto, por ejemplo,
+
+00:03:29.400 --> 00:03:34.620
+debes agregarlo a la función directamente agregándolo como un argumento adicional.
+
+00:03:34.620 --> 00:03:38.700
+No se puede hacer simplemente llamando al objeto mismo.
+
+00:03:38.700 --> 00:03:44.940
+Sin embargo, con un prototipo es posible agregar una propiedad o método con una sola llamada.
+
+00:03:45.480 --> 00:03:48.180
+Dado que todos los objetos tienen una propiedad prototipo,
+
+00:03:48.180 --> 00:03:52.920
+esta es una forma más sencilla de agregar propiedades y funciones a los objetos.
+
+00:03:53.460 --> 00:03:59.160
+Cualquier objeto del que se crea una instancia hereda el estado actual del prototipo.
+
+00:03:59.160 --> 00:04:02.880
+Si un prototipo cambia, todos los objetos que lo utilicen
+
+00:04:02.880 --> 00:04:08.280
+heredará automáticamente las nuevas propiedades y funciones dentro de ese prototipo.
+
+00:04:08.280 --> 00:04:11.640
+Una forma de cambiar un prototipo es mediante un script,
+
+00:04:11.640 --> 00:04:15.300
+que puede anular las propiedades y funciones del prototipo.
+
+00:04:15.840 --> 00:04:20.280
+Aquí hay otro ejemplo que utiliza un prototipo para cambiar instancias de Car.
+
+00:04:20.280 --> 00:04:26.460
+Esta vez, agrega una función de método llamada getName al prototipo del automóvil.
+
+00:04:26.460 --> 00:04:29.520
+Ahora, cuando se crea una instancia de un objeto Car,
+
+00:04:29.520 --> 00:04:35.040
+también incluye la función getName que devuelve la marca, modelo y año.
+
+00:04:35.640 --> 00:04:41.400
+Todas las instancias existentes del objeto Car también heredan el método getName.
+
+00:04:41.400 --> 00:04:47.760
+Las funciones generalmente se declaran primero y no se ejecutan hasta que usted se lo solicite específicamente.
+
+00:04:47.760 --> 00:04:50.280
+como viste en algunos de los ejemplos anteriores.
+
+00:04:50.280 --> 00:04:58.140
+Las funciones de autoinvocación o autoejecución comienzan a ejecutarse inmediatamente después de ser declaradas.
+
+00:04:58.140 --> 00:05:02.820
+Las funciones y variables dentro de funciones autoejecutables son solo
+
+00:05:02.820 --> 00:05:06.240
+disponible para el código dentro de la función autoejecutable.
+
+00:05:06.960 --> 00:05:11.400
+Las funciones de invocación automática también pueden ser anónimas o sin nombre
+
+00:05:11.400 --> 00:05:15.540
+funciones y tienen el formato que se muestra en el bloque de código de la diapositiva.
+
+00:05:16.200 --> 00:05:20.460
+Las funciones autoejecutables se utilizan a menudo para inicializar datos.
+
+00:05:20.460 --> 00:05:23.460
+o para declarar elementos DOM en la página.
+
+00:05:23.460 --> 00:05:25.620
+En este vídeo aprendiste:
+
+00:05:25.620 --> 00:05:31.800
+Una función es un bloque de código que se puede llamar desde cualquier punto de un script después de haber sido declarado.
+
+00:05:31.800 --> 00:05:36.600
+Las funciones pueden tomar argumentos pasados ​​como parámetros y devolver resultados.
+
+00:05:37.380 --> 00:05:41.460
+Al utilizar prototipos, puede definir fácilmente propiedades y
+
+00:05:41.460 --> 00:05:44.640
+métodos para todas las instancias de un objeto específico.
+
+00:05:45.300 --> 00:05:51.000
+Existen prototipos para todos los objetos JavaScript que se pueden crear con la nueva palabra clave.
+
+00:05:51.780 --> 00:05:57.300
+Para agregar una nueva función a la plantilla del objeto, modifique el prototipo del objeto.
+
+00:05:58.200 --> 00:06:05.040
+Las funciones autoejecutables (invocación automática) comienzan a ejecutarse inmediatamente después de haber sido declaradas.
+
+00:06:05.040 --> 00:06:09.480
+Las funciones y variables están aisladas del resto del script.
