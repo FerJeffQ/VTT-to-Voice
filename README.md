@@ -17,7 +17,7 @@ Voice Translator es un programa en python que utiliza Google Translate y Text-to
 1. Clona este repositorio o descarga el código fuente.
 
 ```bash
-git clone https://github.com/YourUsername/VoiceTranslator.git
+git clone https://github.com/FerJeffQ/VoiceTranslate.git
 cd VoiceTranslator
 ```
 
