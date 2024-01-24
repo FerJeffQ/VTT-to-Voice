@@ -16,23 +16,16 @@ class VoiceTranslator:
 
     def translate_and_speak(self, text, lang='es', max_retries=3):
         # Traduce el texto a otro idioma y lo convierte en un segmento de audio usando Google Text-to-Speech (gTTS).
-        for _ in range(max_retries):
-            try:
-                translation = self.translator.translate(text, dest=lang)
-                tts = gTTS(text=translation.text, lang=lang)
+        translation = self.translator.translate(text, dest=lang)
+        tts = gTTS(text=translation.text, lang=lang)
 
-                # Guarda el audio en un objeto BytesIO para poder ser utilizado por Pydub.
-                fp = io.BytesIO()
-                tts.write_to_fp(fp)
-                fp.seek(0)
+        # Guarda el audio en un objeto BytesIO para poder ser utilizado por Pydub.
+        fp = io.BytesIO()
+        tts.write_to_fp(fp)
+        fp.seek(0)
 
-                # Retorna el audio como un segmento de AudioSegment.
-                return AudioSegment.from_file(fp, format="mp3")
-            except ReadTimeout:
-                print("Timeout error, retrying...")
-        
-        # Si todos los reintentos fallan, levanta una excepción.
-        raise Exception("Unable to translate text after multiple retries.")
+        # Retorna el audio como un segmento de AudioSegment.
+        return AudioSegment.from_file(fp, format="mp3")
 
     def adjust_audio_speed(self, audio, speed=1.35):
         # Ajusta la velocidad de reproducción del audio.

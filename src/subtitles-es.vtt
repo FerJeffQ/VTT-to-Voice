@@ -1,235 +1,331 @@
 WEBVTT
 
-00:00:07.260 --> 00:00:10.500
-Bienvenido a funciones y prototipos de JavaScript.
+00:00:06.960 --> 00:00:09.120
+Bienvenido a las API de JavaScript.
 
-00:00:11.160 --> 00:00:14.040
+00:00:10.020 --> 00:00:12.720
 Después de ver este vídeo, podrás
 
-00:00:14.040 --> 00:00:16.440
-describir funciones en JavaScript,
+00:00:12.720 --> 00:00:15.060
+explicar cómo trabajar con nodos,
 
-00:00:16.440 --> 00:00:19.740
-describir prototipos en JavaScript, y
+00:00:15.060 --> 00:00:18.060
+describir cómo modificar el contenido de un elemento,
 
-00:00:19.740 --> 00:00:22.380
-Demuestre cómo crear un objeto personalizado.
+00:00:18.060 --> 00:00:22.800
+explicar cómo modificar el estilo en línea y los atributos de un objeto,
 
-00:00:22.920 --> 00:00:28.860
-Una función es un bloque de código que se puede llamar desde cualquier punto de un script después de haber sido declarado.
+00:00:23.243 --> 00:00:26.903
+y describir cómo utilizar los métodos y eventos del objeto Window.
 
-00:00:28.860 --> 00:00:31.500
-Una función se compone de las siguientes partes:
+00:00:28.620 --> 00:00:32.400
+El núcleo DOM Nivel 1 y HTML Nivel 1
 
-00:00:31.500 --> 00:00:33.180
-La función de palabra clave.
+00:00:32.400 --> 00:00:37.740
+Las especificaciones tienen demasiados detalles para una unidad. En cambio, el resto de la unidad
 
-00:00:33.180 --> 00:00:34.740
-El nombre de la función.
+00:00:37.740 --> 00:00:44.040
+se centra en funciones y propiedades de secuencias de comandos que se utilizan comúnmente cuando se trabaja con páginas HTML.
 
-00:00:34.740 --> 00:00:38.100
-Paréntesis, con argumentos de parámetros opcionales.
+00:00:44.880 --> 00:00:48.720
+Algunas de estas API comunes utilizadas al acceder a HTML
 
-00:00:38.100 --> 00:00:40.620
-Llaves, con la lógica.
+00:00:48.720 --> 00:00:51.780
+Los elementos DOM en las páginas web se ven en la diapositiva,
 
-00:00:41.220 --> 00:00:46.440
-La última declaración en un bloque de funciones es la declaración de retorno opcional que devuelve
+00:00:51.780 --> 00:00:54.120
+Los elementos DOM se revisan a continuación.
 
-00:00:46.440 --> 00:00:48.960
-controle de nuevo a lo que sea que se llame la función.
+00:00:55.980 --> 00:01:00.180
+Para recuperar una referencia de nodo para un elemento de un documento dada una identificación,
 
-00:00:49.980 --> 00:00:52.920
-Este ejemplo es una función llamada agregar.
+00:01:00.180 --> 00:01:04.920
+utilizar la función document.getElementById
 
-00:00:52.920 --> 00:00:57.540
-Esta función toma dos argumentos de parámetro y devuelve la suma de
+00:01:04.920 --> 00:01:07.800
+y pase el valor de identificación como argumento.
 
-00:00:57.540 --> 00:01:01.800
-los argumentos o concatena los dos argumentos si son cadenas.
+00:01:08.340 --> 00:01:16.020
+Esto devuelve un elemento HTML o XML específico si se encuentra una identificación única coincidente en la página web.
 
-00:01:02.520 --> 00:01:07.020
-Observe que no especifica el tipo de datos para los argumentos de la función.
+00:01:16.860 --> 00:01:19.560
+La función getElementsByTagName
 
-00:01:07.020 --> 00:01:13.440
-Los tipos de datos están determinados por los valores de los argumentos que se pasan a la función.
+00:01:19.560 --> 00:01:23.760
+recupera una NodeList de elementos con un nombre de etiqueta especificado.
 
-00:01:13.440 --> 00:01:19.980
-No se declara ningún tipo de retorno específico: la función devuelve cualquier tipo requerido.
+00:01:23.760 --> 00:01:27.420
+NodeList contiene una serie de elementos en su documento.
 
-00:01:19.980 --> 00:01:25.680
-En este caso, el retorno es una simple suma o concatenación de la entrada
+00:01:27.420 --> 00:01:30.840
+Usted proporciona el nombre del elemento que le interesa.
 
-00:01:25.680 --> 00:01:31.080
-parámetros. La acción elegida depende de los datos que se proporcionan a la función.
+00:01:30.840 --> 00:01:35.700
+y se devuelve una matriz de todos los elementos con ese nombre que se encuentran en el documento.
 
-00:01:31.080 --> 00:01:35.340
-Si los valores pueden interpretarse como números, se suman.
+00:01:37.020 --> 00:01:43.260
+Para elementos HTML, el parámetro tagName es el nombre literal de la etiqueta HTML.
 
-00:01:35.340 --> 00:01:39.120
-Si pueden interpretarse como cadenas, se concatenan.
+00:01:43.260 --> 00:01:49.560
+Si ejecuta la función getElementsByTagName con una "p" como argumento de parámetro,
 
-00:01:39.720 --> 00:01:46.080
-Este es un ejemplo de cómo declarar una función llamada Car que acepta tres argumentos como parámetros.
+00:01:49.560 --> 00:01:53.460
+Se devuelve una NodeList de todos los párrafos del documento.
 
-00:01:46.080 --> 00:01:51.720
-Un poco más abajo, solicita específicamente que se ejecute la función, declarando la declaración:
+00:01:54.420 --> 00:01:59.460
+Este ejemplo muestra cómo puede recuperar todos los elementos de imagen de una página web
 
-00:01:51.720 --> 00:01:59.580
-var c = Auto nuevo con los argumentos “meridian”, “Sabre GT” y 2012.
+00:01:59.460 --> 00:02:05.340
+usando la función getElementsByTagName y pasando "img" como argumento del parámetro.
 
-00:01:59.580 --> 00:02:03.300
-En la función Coche, la palabra clave "este" se refiere a
+00:02:05.340 --> 00:02:10.500
+El resultado es una NodeList que se asigna a la variable imgSet.
 
-00:02:03.300 --> 00:02:06.840
-la instancia actual del objeto Car que se está creando.
+00:02:10.500 --> 00:02:13.560
+En la siguiente parte del código, recorre
 
-00:02:07.298 --> 00:02:12.480
-En otras palabras, una instancia de Car asociada con la variable denominada c.
+00:02:13.560 --> 00:02:17.820
+la lista de nodos y concatenar los resultados en un flujo de salida DOM.
 
-00:02:13.059 --> 00:02:16.380
-El uso de la palabra clave "this" puede diferenciar si
+00:02:18.480 --> 00:02:22.920
+El atributo src es una propiedad común de la etiqueta img.
 
-00:02:16.380 --> 00:02:20.640
-te estás refiriendo a la instancia global o local de una variable.
+00:02:22.920 --> 00:02:28.020
+El atributo src indica la ubicación de la fuente de la imagen.
 
-00:02:21.000 --> 00:02:26.340
-El uso de "modelo" en este ejemplo se refiere al argumento que se pasó a la función,
+00:02:28.020 --> 00:02:33.840
+La función document.write() agrega el HTML generado por script al documento.
 
-00:02:26.340 --> 00:02:30.060
-mientras que el uso de "este.modelo" se refiere al global
+00:02:35.700 --> 00:02:38.100
+Puedes usar la función DOM API
 
-00:02:30.060 --> 00:02:34.140
-Variable "modelo" asociada a esta instancia del objeto Car.
+00:02:38.100 --> 00:02:41.366
+documento.createElement(Nombre de etiqueta)
 
-00:02:34.530 --> 00:02:41.580
-La función getName de Car devuelve la marca, modelo y año del objeto Car recién creado.
+00:02:41.366 --> 00:02:44.100
+para crear un elemento en el documento actual.
 
-00:02:42.300 --> 00:02:46.740
-Los prototipos le permiten definir fácilmente propiedades y métodos.
+00:02:44.760 --> 00:02:49.020
+Después de crear el elemento, puede utilizar cualquier número de funciones para colocar
 
-00:02:46.740 --> 00:02:49.440
-para todas las instancias de un objeto particular.
+00:02:49.020 --> 00:02:52.863
+el elemento en la ubicación apropiada dentro del documento.
 
-00:02:49.440 --> 00:02:53.880
-Todos los objetos JavaScript que se pueden crear con la palabra clave "nueva"
+00:02:52.863 --> 00:02:57.300
+Ejemplos de estas funciones incluyen insertBefore, appendChild,
 
-00:02:53.880 --> 00:02:57.480
-heredar propiedades y métodos de un "prototipo".
+00:02:57.300 --> 00:03:03.420
+o función replaceChild que se puede utilizar para agregar el elemento recién creado al documento.
 
-00:02:57.480 --> 00:03:03.060
-Por ejemplo, el objeto "Coche" que creamos anteriormente hereda la marca, modelo,
+00:03:05.100 --> 00:03:09.832
+Este ejemplo muestra el código fuente para agregar un nodo a un documento.
 
-00:03:03.060 --> 00:03:09.600
-y propiedades de año de la función constructora, que están implícitamente definidas en el prototipo Car.
+00:03:09.832 --> 00:03:12.840
+Se está creando un nuevo elemento de párrafo que
 
-00:03:09.600 --> 00:03:14.700
-Cuando se crea un objeto de automóvil, ese objeto hereda todas las propiedades
+00:03:12.840 --> 00:03:15.960
+incluye un nodo de texto con la cadena "¡Hola mundo!"
 
-00:03:14.700 --> 00:03:17.940
-y métodos que están definidos por este prototipo.
+00:03:16.680 --> 00:03:20.940
+Luego, el nodo de texto se agrega como hijo del elemento de párrafo.
 
-00:03:17.940 --> 00:03:23.880
-A diferencia de los objetos, los métodos y propiedades de los prototipos se pueden cambiar con una sola llamada.
+00:03:23.220 --> 00:03:27.540
+Finalmente, el párrafo completo con texto se agrega como elemento secundario.
 
-00:03:24.200 --> 00:03:29.400
-Si desea agregar una nueva propiedad a la función constructora de un objeto, por ejemplo,
+00:03:27.540 --> 00:03:31.260
+nodo al final del nodo del cuerpo de la página HTML.
 
-00:03:29.400 --> 00:03:34.620
-debes agregarlo a la función directamente agregándolo como un argumento adicional.
+00:03:32.400 --> 00:03:35.520
+La función elemento.innerHTML
 
-00:03:34.620 --> 00:03:38.700
-No se puede hacer simplemente llamando al objeto mismo.
+00:03:35.520 --> 00:03:39.000
+recupera o establece el contenido de un elemento HTML.
 
-00:03:38.700 --> 00:03:44.940
-Sin embargo, con un prototipo es posible agregar una propiedad o método con una sola llamada.
+00:03:39.000 --> 00:03:45.300
+La propiedad InnerHTML devuelve todos los elementos secundarios como una cadena de texto.
 
-00:03:45.480 --> 00:03:48.180
-Dado que todos los objetos tienen una propiedad prototipo,
+00:03:46.020 --> 00:03:52.200
+Con la función element.innerHTML, puede cambiar el contenido de un elemento HTML,
 
-00:03:48.180 --> 00:03:52.920
-esta es una forma más sencilla de agregar propiedades y funciones a los objetos.
+00:03:53.160 --> 00:03:57.300
+configurándolo en una cadena de texto que puede incluir etiquetas HTML.
 
-00:03:53.460 --> 00:03:59.160
-Cualquier objeto del que se crea una instancia hereda el estado actual del prototipo.
+00:03:58.440 --> 00:04:05.040
+Establecer el valor internalHTML de un elemento en una cadena elimina todos los elementos secundarios actuales.
 
-00:03:59.160 --> 00:04:02.880
-Si un prototipo cambia, todos los objetos que lo utilicen
+00:04:05.040 --> 00:04:10.740
+Luego, el navegador analiza la cadena y establece el contenido del elemento HTML.
 
-00:04:02.880 --> 00:04:08.280
-heredará automáticamente las nuevas propiedades y funciones dentro de ese prototipo.
+00:04:11.940 --> 00:04:14.760
+Puedes usar el método element.style
 
-00:04:08.280 --> 00:04:11.640
-Una forma de cambiar un prototipo es mediante un script,
+00:04:14.760 --> 00:04:19.140
+para recuperar o establecer el estilo CSS en línea para un elemento en particular.
 
-00:04:11.640 --> 00:04:15.300
-que puede anular las propiedades y funciones del prototipo.
+00:04:19.140 --> 00:04:23.040
+Si usa element.style para establecer el estilo de un elemento,
 
-00:04:15.840 --> 00:04:20.280
-Aquí hay otro ejemplo que utiliza un prototipo para cambiar instancias de Car.
+00:04:23.040 --> 00:04:28.680
+anula cualquier configuración de una hoja de estilos CSS con un estilo específico.
 
-00:04:20.280 --> 00:04:26.460
-Esta vez, agrega una función de método llamada getName al prototipo del automóvil.
+00:04:30.060 --> 00:04:37.020
+La forma de configurar el estilo en JavaScript es con el formato element.style.propertyName = valor.
 
-00:04:26.460 --> 00:04:29.520
-Ahora, cuando se crea una instancia de un objeto Car,
+00:04:39.000 --> 00:04:44.597
+Por ejemplo, si tuvieras un elemento div style="color:blue".
 
-00:04:29.520 --> 00:04:35.040
-también incluye la función getName que devuelve la marca, modelo y año.
+00:04:45.180 --> 00:04:50.940
+Aquí el
 
-00:04:35.640 --> 00:04:41.400
-Todas las instancias existentes del objeto Car también heredan el método getName.
+00:04:50.940 --> 00:04:55.260
+Puedes cambiar el estilo de esta etiqueta div con la declaración de JavaScript:
 
-00:04:41.400 --> 00:04:47.760
-Las funciones generalmente se declaran primero y no se ejecutan hasta que usted se lo solicite específicamente.
+00:04:55.477 --> 00:04:58.832
+div.style.color = 'rojo';
 
-00:04:47.760 --> 00:04:50.280
-como viste en algunos de los ejemplos anteriores.
+00:04:59.580 --> 00:05:07.920
+Por el contrario, element.setAttribute('style',…) borra todos los estilos CSS en línea establecidos previamente.
 
-00:04:50.280 --> 00:04:58.140
-Las funciones de autoinvocación o autoejecución comienzan a ejecutarse inmediatamente después de ser declaradas.
+00:05:10.020 --> 00:05:16.320
+La función element.setAttribute con parámetros (attrName, attrValue)
 
-00:04:58.140 --> 00:05:02.820
-Las funciones y variables dentro de funciones autoejecutables son solo
+00:05:16.320 --> 00:05:19.560
+Modifica dinámicamente el atributo de un elemento.
 
-00:05:02.820 --> 00:05:06.240
-disponible para el código dentro de la función autoejecutable.
+00:05:20.880 --> 00:05:24.240
+En el ejemplo, el atributo src de un elemento
 
-00:05:06.960 --> 00:05:11.400
-Las funciones de invocación automática también pueden ser anónimas o sin nombre
+00:05:24.240 --> 00:05:28.980
+con una identificación de theImage se establece en una imagen de destino diferente.
 
-00:05:11.400 --> 00:05:15.540
-funciones y tienen el formato que se muestra en el bloque de código de la diapositiva.
+00:05:28.980 --> 00:05:36.000
+La función element.removeAttribute(attrName) elimina un atributo de un elemento.
 
-00:05:16.200 --> 00:05:20.460
-Las funciones autoejecutables se utilizan a menudo para inicializar datos.
+00:05:36.000 --> 00:05:40.660
+La función element.getAttribute(attrName)
 
-00:05:20.460 --> 00:05:23.460
-o para declarar elementos DOM en la página.
+00:05:40.660 --> 00:05:45.420
+recupera el valor del atributo especificado en el elemento, si existe.
 
-00:05:23.460 --> 00:05:25.620
-En este vídeo aprendiste:
+00:05:48.120 --> 00:05:51.480
+A continuación se muestran algunas funciones y eventos de objetos de ventana.
 
-00:05:25.620 --> 00:05:31.800
-Una función es un bloque de código que se puede llamar desde cualquier punto de un script después de haber sido declarado.
+00:05:52.080 --> 00:05:55.980
+Para abrir una nueva ventana del navegador, utilice la función window.open().
 
-00:05:31.800 --> 00:05:36.600
-Las funciones pueden tomar argumentos pasados ​​como parámetros y devolver resultados.
+00:05:55.980 --> 00:06:00.180
+Este método devuelve una referencia al nuevo objeto de ventana.
 
-00:05:37.380 --> 00:05:41.460
-Al utilizar prototipos, puede definir fácilmente propiedades y
+00:06:00.180 --> 00:06:03.180
+Puede utilizar esta referencia más adelante para cerrar la ventana,
 
-00:05:41.460 --> 00:05:44.640
-métodos para todas las instancias de un objeto específico.
+00:06:03.180 --> 00:06:06.420
+con el nombre_referencia seguido de la función close().
 
-00:05:45.300 --> 00:05:51.000
-Existen prototipos para todos los objetos JavaScript que se pueden crear con la nueva palabra clave.
+00:06:07.740 --> 00:06:10.680
+Los parámetros de la función window.open son:
 
-00:05:51.780 --> 00:05:57.300
-Para agregar una nueva función a la plantilla del objeto, modifique el prototipo del objeto.
+00:06:10.680 --> 00:06:17.220
+URL: una cadena que indica la ubicación de la página web que se mostrará en la nueva ventana.
 
-00:05:58.200 --> 00:06:05.040
-Las funciones autoejecutables (invocación automática) comienzan a ejecutarse inmediatamente después de haber sido declaradas.
+00:06:17.220 --> 00:06:20.820
+Puedes pasar una cadena vacía si vas a escribir algo
 
-00:06:05.040 --> 00:06:09.480
-Las funciones y variables están aisladas del resto del script.
+00:06:20.820 --> 00:06:25.320
+contenido generado por script a la nueva ventana en el contexto de URL actual.
+
+00:06:27.120 --> 00:06:30.660
+Nombre: una cadena que especifica el nombre de la ventana.
+
+00:06:31.200 --> 00:06:35.460
+Características: una cadena opcional que especifica las características de la ventana.
+
+00:06:35.460 --> 00:06:37.860
+como su ubicación y dimensiones.
+
+00:06:38.640 --> 00:06:43.020
+La cadena de características es una lista de pares nombre-valor separados por comas.
+
+00:06:44.040 --> 00:06:48.060
+Reemplazar: un valor booleano opcional. Si es verdad,
+
+00:06:48.060 --> 00:06:52.380
+la nueva ubicación reemplaza la página actual en el historial del navegador.
+
+00:06:52.380 --> 00:06:58.860
+La función window.onload se puede utilizar para iniciar una función después de cargar la página.
+
+00:06:58.860 --> 00:07:05.760
+La función window.dump("message") escribe una cadena en la consola del navegador web.
+
+00:07:05.760 --> 00:07:09.000
+La función dump() es una forma menos intrusiva de mostrar
+
+00:07:09.000 --> 00:07:12.060
+información de diagnóstico que el método alert().
+
+00:07:12.960 --> 00:07:16.740
+Finalmente, el window.scrollTo(x-value,
+
+00:07:16.740 --> 00:07:22.200
+valor y) desplaza el navegador web a un conjunto particular de coordenadas en una página.
+
+00:07:23.220 --> 00:07:28.680
+El controlador de eventos onload se ejecuta en la ventana actual después de que los documentos cargan la página web.
+
+00:07:28.680 --> 00:07:34.980
+En el ejemplo, el evento onload hace que se ejecute una función anónima. Esta función,
+
+00:07:34.980 --> 00:07:38.160
+a su vez, ejecuta la función addPara().
+
+00:07:40.020 --> 00:07:41.880
+En este vídeo aprendiste
+
+00:07:41.880 --> 00:07:44.820
+puede recuperar una referencia a un nodo usando:
+
+00:07:44.820 --> 00:07:52.320
+document.getElementById(id): devuelve un elemento específico basado en el atributo id.
+
+00:07:52.920 --> 00:07:58.800
+document.getElementsByTagName(tagName): recupera una serie de elementos con la etiqueta especificada.
+
+00:07:58.800 --> 00:08:01.249
+Puedes crear un elemento usando:
+
+00:08:01.249 --> 00:08:04.487
+documento.createElement(Nombre de etiqueta)
+
+00:08:04.487 --> 00:08:06.480
+y colóquelo usando:
+
+00:08:06.480 --> 00:08:10.320
+insertarAntes, agregarChild o reemplazarChild.
+
+00:08:10.320 --> 00:08:12.780
+Puedes modificar elementos usando:
+
+00:08:12.780 --> 00:08:18.540
+element.innerHTML para recuperar o establecer el contenido de un elemento HTML,
+
+00:08:18.540 --> 00:08:23.760
+element.style para recuperar o establecer el estilo CSS en línea,
+
+00:08:24.228 --> 00:08:28.853
+element.setAttribute para modificar los atributos de un elemento.
+
+00:08:30.000 --> 00:08:33.660
+Puede administrar un objeto de ventana usando funciones que incluyen:
+
+00:08:33.660 --> 00:08:38.640
+window.open para devolver la referencia a un nuevo objeto de ventana para el navegador web,
+
+00:08:38.640 --> 00:08:44.160
+window.dump("message") para escribir una cadena en la consola del navegador web.
+
+00:08:45.960 --> 00:08:50.220
+Esta no es una lista exhaustiva: existen muchas más funciones que
+
+00:08:50.220 --> 00:08:53.460
+Le permite trabajar con elementos y nodos HTML.
