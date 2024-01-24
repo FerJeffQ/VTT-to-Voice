@@ -1,283 +1,175 @@
 WEBVTT
 
 1
-00:00:07.535 --> 00:00:11.574
-Hello, welcome to Overview of Web
-and Cloud Development.
+00:00:07.535 --> 00:00:12.105
+Welcome to Insiders' Viewpoints: Aspects of the Web Development Lifecycle.
 
 2
-00:00:11.640 --> 00:00:16.680
-When you’re starting out as a Web Developer,
-it can be difficult to determine what you
+00:00:12.600 --> 00:00:16.500
+In this video, we will listen to several
+web development professionals discuss
 
 3
-00:00:16.680 --> 00:00:19.380
-need to learn and what order you should learn
-it in.
+00:00:16.500 --> 00:00:19.320
+the aspects in the lifecycle of web development.
 
 4
-00:00:19.980 --> 00:00:23.040
-Understanding how familiar websites are constructed and
+00:00:20.071 --> 00:00:24.780
+So, what are your most and least favorite
+aspects in the lifecycle of web development
 
 5
-00:00:23.040 --> 00:00:25.320
-delivered to you is a good starting point.
+00:00:25.018 --> 00:00:28.918
+(from conception to development and
+testing, deployment, and maintenance)
 
 6
-00:00:25.980 --> 00:00:29.340
-Let’s review the basics of how you interact
-with a website.
+00:00:29.760 --> 00:00:33.420
+Hello, everyone, my name is Upkar Lidder
+and I'm a developer advocate with IBM.
 
 7
-00:00:30.060 --> 00:00:33.180
-You launch an internet browser – there are
-lots available:
+00:00:34.080 --> 00:00:37.560
+So I will not call it my
+least favorite by any means.
 
 8
-00:00:33.180 --> 00:00:39.780
-Google Chrome, Microsoft Edge, Mozilla Firefox,
-and Apple Safari are some of the most popular.
+00:00:37.560 --> 00:00:42.780
+But as a developer, I'm very keen to
+start developing to start writing code.
 
 9
-00:00:39.780 --> 00:00:47.940
-The browser has an address bar, into which
-you enter a URL, like www.IBM.com.
+00:00:43.274 --> 00:00:48.960
+There is a lot of, there's a lot of things that
+happen before you write that first piece of code.
 
 10
-00:00:48.840 --> 00:00:53.940
-The browser then contacts the server with
-the name and requests the information that
+00:00:48.960 --> 00:00:52.260
+And that could be design thinking workshops,
 
 11
-00:00:53.940 --> 00:00:55.020
-makes up the website.
+00:00:52.260 --> 00:00:53.640
+getting user requirements,
 
 12
-00:00:55.020 --> 00:01:00.720
-The server then sends a response, which contains
-the data that the client requires to display
+00:00:53.640 --> 00:00:54.960
+sprint planning, etc.
 
 13
-00:01:00.720 --> 00:01:01.500
-the website.
+00:00:54.960 --> 00:01:00.600
+So as a developer, I'm always eager
+to bypass those things and get into
 
 14
-00:01:02.460 --> 00:01:04.860
-For most websites, the server will return:
+00:01:00.600 --> 00:01:02.820
+the actual development of the application.
 
 15
-00:01:04.860 --> 00:01:10.380
-HTML, which defines the structure of the page,
-but doesn’t look very attractive
+00:01:03.341 --> 00:01:08.040
+My favorite thing about application development
+is actually deploying the application
 
 16
-00:01:10.380 --> 00:01:18.120
-CSS, which adds style and flair to the page
-and JavaScript, which adds interactivity and
+00:01:08.040 --> 00:01:14.700
+or an app in handing it to the end user
+and see how it makes their lives easier,
 
 17
-00:01:18.120 --> 00:01:19.402
-dynamic content.
+00:01:14.700 --> 00:01:16.500
+it makes their jobs more effective.
 
 18
-00:01:20.400 --> 00:01:25.440
-Content displayed by websites can contain
-elements that are either previously stored
+00:01:18.480 --> 00:01:21.060
+Hello there, my name is Bradley Steinfeld.
 
 19
-00:01:25.440 --> 00:01:31.620
-on the server (called “static”) or generated
-each time they are requested by the client
+00:01:21.060 --> 00:01:25.860
+I am a software architect and I work
+for IBM Cloud and cognitive software.
 
 20
-00:01:31.620 --> 00:01:33.600
-(called “dynamic”).
+00:01:26.640 --> 00:01:31.740
+So as a software architect, I
+think my favorite part of the
 
 21
-00:01:33.600 --> 00:01:39.360
-Dynamic elements can involve information coming
-from other systems and applications, such
+00:01:31.740 --> 00:01:34.860
+cloud app development lifecycle
+is probably the conception part,
 
 22
-00:01:39.360 --> 00:01:40.522
-as databases.
+00:01:34.860 --> 00:01:36.060
+the architecture part,
 
 23
-00:01:40.677 --> 00:01:46.497
-Most websites contain static and dynamic elements
-to provide the best user experience.
+00:01:36.060 --> 00:01:39.540
+and kind of putting it together
+how we're going to build this app.
 
 24
-00:01:47.280 --> 00:01:52.560
-Cloud Applications are similar to Websites
-in that they request content that a server
+00:01:39.540 --> 00:01:41.400
+What services are we going to use?
 
 25
-00:01:52.560 --> 00:01:53.362
-returns.
+00:01:41.400 --> 00:01:45.180
+What different types of technologies
+we need to at the end of the day,
 
 26
-00:01:53.421 --> 00:01:59.940
-Cloud Apps are built to work seamlessly with
-a Cloud-based back-end infrastructure, Cloud-based
+00:01:45.180 --> 00:01:49.560
+deliver what the stakeholder needs
+and do it in the best way we can.
 
 27
-00:01:59.940 --> 00:02:05.520
-data storage and data processing, and other
-Cloud services, making them very scalable
+00:01:50.220 --> 00:01:52.020
+Cheapest we can so on and so forth.
 
 28
-00:02:05.520 --> 00:02:07.440
-and very resilient.
+00:01:52.409 --> 00:01:54.900
+My least favorite is probably testing.
 
 29
-00:02:08.280 --> 00:02:13.980
-The environment for building websites and
-Cloud Applications is divided into two primary
+00:01:55.218 --> 00:01:58.260
+It's not the most fun to discover bugs and
 
 30
-00:02:13.980 --> 00:02:14.580
-areas:
+00:01:58.260 --> 00:02:00.960
+then fix them but at the end of
+the day, it's a necessary part.
 
 31
-00:02:14.580 --> 00:02:16.440
-front-end and back-end.
+00:02:01.163 --> 00:02:04.043
+So there you go.
 
 32
-00:02:17.100 --> 00:02:22.740
-The front-end deals with everything that happens
-at the client-side – everything the user
+00:02:05.940 --> 00:02:07.200
+I am Dennis Harvey.
 
 33
-00:02:22.740 --> 00:02:24.480
-can see and interact with.
+00:02:07.200 --> 00:02:11.760
+I work at Coursera as a content
+strategy manager for cloud technology.
 
 34
-00:02:24.480 --> 00:02:31.680
-You can choose to specialize in front-end
-coding, using HTML, CSS, JavaScript and related
+00:02:12.420 --> 00:02:16.740
+Conception and development is always exciting--
+to see an idea morph into reality.
 
 35
-00:02:31.680 --> 00:02:33.780
-frameworks, libraries, and tools.
+00:02:17.400 --> 00:02:22.020
+Testing can be interesting
+for QA-oriented professionals.
 
 36
-00:02:34.560 --> 00:02:40.260
-The back-end deals with everything that happens
-on the server before the code and data are
+00:02:22.620 --> 00:02:27.180
+Deployment can also be challenging if
+you incorporate automated deployment
 
 37
-00:02:40.260 --> 00:02:41.469
-sent to the client.
+00:02:27.180 --> 00:02:29.880
+which would be a best practice at this point.
 
 38
-00:02:42.000 --> 00:02:47.520
-The back-end coding usually handles the logic
-and functionality that make the website or
-
-39
-00:02:47.520 --> 00:02:52.320
-app work, and the authentication processes
-that keep data secure.
-
-40
-00:02:53.280 --> 00:03:00.240
-Back-end developers may also work with relational
-or noSQL databases, even collaborating with
-
-41
-00:03:00.240 --> 00:03:02.880
-database administrators in bigger projects.
-
-42
-00:03:03.660 --> 00:03:09.840
-Full-stack developers have skills, knowledge,
-and experience in both front-end and back-end
-
-43
-00:03:09.840 --> 00:03:10.620
-environments.
-
-44
-00:03:11.580 --> 00:03:16.740
-Whichever way you choose to specialize, you
-will need the appropriate tools to help you work.
-
-45
-00:03:16.980 --> 00:03:22.500
-The first tool most developers add to their
-resources is a code editor.
-
-46
-00:03:22.500 --> 00:03:27.600
-Developers also need tools to integrate, build,
-compile, and debug code.
-
-47
-00:03:28.380 --> 00:03:34.620
-Integrated Development Environments or IDEs
-incorporate some of these additional capabilities
-
-48
-00:03:34.620 --> 00:03:39.480
-beyond just code editing and make it easier
-to build and manage your code.
-
-49
-00:03:40.320 --> 00:03:46.740
-Good IDEs support multiple languages and integrate
-with management and storage tools like Git
-
-50
-00:03:46.740 --> 00:03:47.400
-and GitHub.
-
-51
-00:03:47.400 --> 00:03:52.440
-Other useful features are custom extensions
-and themes for supporting your working style
-
-52
-00:03:52.440 --> 00:03:53.520
-and environment.
-
-53
-00:03:54.060 --> 00:04:02.160
-Examples for code editors and IDEs include
-Sublime Text, Atom, Vim, VS Code, Visual Studio,
-
-54
-00:04:02.160 --> 00:04:04.260
-Eclipse and NetBeans.
-
-55
-00:04:05.520 --> 00:04:08.100
-In this brief overview, you learned about:
-
-56
-00:04:08.100 --> 00:04:11.400
-The basic communication between client and
-servers.
-
-57
-00:04:11.400 --> 00:04:13.740
-How websites are built and displayed.
-
-58
-00:04:13.740 --> 00:04:17.820
-Front-end development is about what happens
-on the client side.
-
-59
-00:04:17.820 --> 00:04:21.660
-Back-end development is about what happens
-on the server.
-
-60
-00:04:21.660 --> 00:04:26.460
-Full-stack development incudes both front-end
-and back-end development.
-
-61
-00:04:26.460 --> 00:04:30.120
-IDEs will help you create and manage your code.
+00:02:30.480 --> 00:02:38.580
+And maintenance is possibly nobody's favorite,
+but it is critical and often under-emphasized.
