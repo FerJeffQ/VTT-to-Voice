@@ -1,4 +1,4 @@
-# Voice Translator to VTT subtitle files
+# Subtitle Converter File VTT-to-Voice mp3
 
 Voice Translator es un programa en python que utiliza Google Translate y Text-to-Speech (TTS) para traducir y generar archivos de audio a partir de subtítulos en formato VTT.
 
