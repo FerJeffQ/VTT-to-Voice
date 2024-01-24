@@ -56,6 +56,7 @@ class VoiceTranslator:
     def save_audio(self):
         # Guarda el audio final en un archivo MP3 en la ruta especificada.
         self.final_audio.export(self.output_path, format='mp3')
+        print('Audio guardado con exito!')
 
 if __name__ == "__main__":
     # Configuración de las rutas de entrada y salida.
