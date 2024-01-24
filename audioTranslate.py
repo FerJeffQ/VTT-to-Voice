@@ -57,7 +57,7 @@ class VoiceTranslator:
 
 if __name__ == "__main__":
     # Configuración de las rutas de entrada y salida.
-    path = '/mnt/c/Users/ferje/Documents/Programming/VTT-to-Voice/'
+    path = '/mnt/c/Users/ferje/Documents/Programming/VTT_to_Voice/'
     vtt_file_path = path + 'src/subtitles-en.vtt'
     output_path = path + 'output/final_audio.mp3'
     
