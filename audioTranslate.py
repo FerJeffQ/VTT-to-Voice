@@ -39,7 +39,7 @@ class VoiceTranslator:
         self.final_audio.export(self.output_path, format='mp3')
 
 if __name__ == "__main__":
-    path = '/mnt/c/Users/ferje/Documents/Programming/VoiceTranslate/'
+    path = '/mnt/c/Users/ferje/Documents/Programming/VTT-to-Voice/'
     vtt_file_path = path + 'src/subtitles-en.vtt'
     output_path = path + 'output/final_audio.mp3'
     translator = VoiceTranslator(vtt_file_path, output_path)
